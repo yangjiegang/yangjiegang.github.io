@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+#main { width: 200px; height: 200px; padding: 5px; border: 1px solid #ccc; position: relative; }
+#main .small_pic { width: 200px; height: 200px; background: #eee; position: relative; }
+#main .float_layer { width: 50px; height: 50px; border: 1px solid #000; background: #fff; filter: alpha(opacity: 30); opacity: 0.3; position: absolute; top: 0; left: 0; display:none; }
+#main .mark {width:100%; height:100%; position:absolute; z-index:1; left:0px; top:0px; background:red; filter:alpha(opacity:0); opacity:0;}
+#main .big_pic { position: absolute; top: -1px; left: 215px; width:250px; height:250px; overflow:hidden; border:2px solid #CCC; display:none; }
+#main .big_pic img { position:absolute; top: -30px; left: -80px; }
+</style>
+<title>magnifier</title>
+</head>
+
+<body>
+<div id="main">
+	<div class="small_pic">
+    	<span class="mark"></span>
+        <span class="float_layer"></span>
+    	<img id="s" src="img/magnifier/small.png" alt="small"/>
+    </div>
+    <div class="big_pic">
+    	<img id="b" class="hide" src="img/magnifier/big.png" alt="big"/>
+    </div>
+<div>
+   
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    	var main = $("#main");
+		var divS = $(".small_pic");
+		var divB = $(".big_pic");
+		var oMark = $(".mark");
+		var oFloat = $(".float_layer");
+		//var imgS = $("#s");
+		//var imgB = $("#b");
+		var imgB = divB.find("img");
+
+		$(function(){
+			oMark.mousemove(function(){
+					oFloat.css({display:"block",});
+					divB.css({display:"block",});
+					//float.removeClass("hide");
+					//imgB.removeClass("hide");
+			});
+			oMark.mouseleave(function(){
+					oFloat.css({display:"none",});
+					divB.css({display:"none",});
+					//float.addClass("hide");
+					//imgB.addClass("hide");
+			});
+			oMark.mousemove(function(e){
+				//var oEvent = ev||event;
+				var l=e.pageX-main.offset().left-divS.offset().left-(oFloat.width()/2);
+				var t=e.pageY-main.offset().top-divS.offset().top-(oFloat.height()/2);
+				document.title = l + "|" + t;
+
+				if(l<0){
+					l=0;
+				}
+				else if(l>oMark.width()-oFloat.width()){
+					l=oMark.width()-oFloat.width();
+				}
+				if(t<0){
+					t=0;
+				}
+				else if(t>oMark.height()-oFloat.height()){
+					t=oMark.height()-oFloat.height();
+				}
+				
+				oFloat.css("left",l);
+				oFloat.css("top",t);
+				
+				var percentX = l/(oMark.width()-oFloat.width());
+				var percentY = l/(oMark.height()-oFloat.height());
+				imgB.css("left",-percentX*(imgB.width()-divB.width()));
+				imgB.css("top",-percentY*(imgB.height()-divB.height()));
+			});
+		});
+    </script>
+</body>
+</html>

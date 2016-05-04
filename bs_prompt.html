@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>search_prompt</title>
+<style>
+div input{width:200px;height:30px;border:solid black 1px;padding:5px;font-size: 16px;}
+div ul{width:210px;height:300px;border:solid black 1px;margin:0;padding:0;display:none;}
+div ul li{line-height:20px;}
+div ul li:hover{background-color:red;}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+function cb(dat){
+	var oUl = $("#ul");
+	var html = "";
+	if(dat.s.length){
+		oUl.css({display:"block",});
+		for(i=0;i<dat.s.length;i++){
+			html += '<li><a target="_blank" href="http://www.baidu.com/s?wd='+dat.s[i]+'">'+ dat.s[i] +'</a></li>';
+		}
+		oUl.append(html);
+	}else{
+		oUl.css("display","none");
+	}
+}
+window.onload=function(){
+	var oUl = document.getElementById('ul');
+	var oQ = document.getElementById('q');
+	//var oScript = $("body").append("script");
+	//oScript.attr("src","https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+q);
+	oQ.onkeyup = function(){
+		if(this.value != ''){
+			var oScript = document.createElement("script");
+			oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+this.value+'&cb=cb';
+			document.body.appendChild(oScript);
+		}else{
+			oUl.style.display="none";
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<!--src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=&json=1&p=3&sid=1457_7477_19672_19721_19782_19806_19900_19558_19808_19842_19902_17001_15751_12119&req=2&sc=eb&csor=0&cb=jQuery110206181504353736466_1462161104905&_=1462161104908"-->
+<div>
+	<input type="text" id="q"/>
+	<ul id="ul"></ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>all_rotate</title>
+</head>
+
+<body>
+<img src="img/all_rotate/miaov (0).jpg" alt="img0"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	var oImg=$("img");
+	var x=0;
+	$(function(){
+		$("body").mousedown(function(e){
+			disX = e.pageX-x;
+			$("body").mousemove(function(e){
+				x=e.pageX-disX;
+				l=parseInt(x/10);
+				if(l>=0){
+					l=l%77;
+				}else{
+					l=-l%77+77;
+				}
+				$("title").html(l);
+				//for(i=1;i<77;i++){
+				//oImg.src="img/miaov ("+i+").jpg";
+				oImg.attr({ src: "img/all_rotate/miaov ("+l+").jpg", alt: "Image"+l });
+				//}
+				return false;
+			});
+			$("body").mouseup(function(){
+				//$("body").unbind("mousemove");
+				//$("body").unbind("mousedown");
+			});	
+			return false;
+		});	
+	
+	});
+</script>
+</body>
+</html>
