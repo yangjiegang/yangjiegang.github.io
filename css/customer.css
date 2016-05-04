@@ -27,15 +27,3 @@ li{list-style:none;}
 .slide{background-color:black;}
 .pager{padding-left:0;margin:20px 0;text-align:center;list-style:none}
 .pager{display:inline}
-.pager li>a,
-.pager a>span{display:inline-block;padding:5px 14px;background-color:#fff;border:1px solid #ddd;border-radius:15px}
-.pager a:focus,
-.pager a:hover{text-decoration:none;background-color:#eee}
-.pager .next>a,
-.pager .next>span{float:right}
-.pager .previous>a,
-.pager .previous>span{float:left}
-.pager .disabled>a,
-.pager .disabled>a:focus,
-.pager .disabled>a:hover,
-.pager .disabled>span{color:#777;cursor:not-allowed;background-color:#fff}
