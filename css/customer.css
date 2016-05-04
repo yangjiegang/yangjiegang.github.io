@@ -23,7 +23,5 @@ li{list-style:none;}
 #btn_next{right:20px;background-position:right 0;}
 .marketing .col-lg-4 {height: 250px;}
 .featurette{display:none;}
-#page a{margin:5px auto 0;}
+#page a{margin:5px;}
 .slide{background-color:black;}
-.pager{margin:20px 0;text-align:center;list-style:none}
-.pager{display:inline}
