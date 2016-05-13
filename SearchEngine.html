@@ -1,0 +1,84 @@
+<!doctype html>
+<meta charset=utf-8 />
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>SearchEngine</title>
+<style type="text/css">
+.content{margin:20px;padding:10px;border:solid 1px black;}
+.table{border-collapse: collapse; border:solid 1px black; margin:20px; padding:10px;}
+.gray{color:gray;}
+.black{color:black;}
+</style>
+</head>
+<body>
+<div  class="table">
+<TABLE width=100% height=31 border=0 cellPadding=0 cellSpacing=0>
+  <form name=searchForm method=get action=http://www.baidu.com/baidu?tn=kkchat&word= target="_blank">
+	<tr>
+	<td align="center">
+			  <input type="text" id="query" class="gray" value="Enter here please." onFocus="Enter()" onBlur="Leave()"/>
+			  <input type="button" name="bd" value="Baidu" onClick=window.open("https://www.baidu.com/s?wd="+form.query.value)>
+			  <input type="button" name="sg" value="Sogou" onClick=window.open("http://www.sogou.com/web?query="+form.query.value)>
+			  <input type="button" name="yahoo" value="Yahoo" onclick=window.open('https://sg.search.yahoo.com/search?p='+form.query.value)>
+			  <input type="button" name="163" value='YouDao' onClick=window.open('http://www.youdao.com/search?q='+form.query.value)>
+			  <input type="button" name="cb" value='Ciba' onclick=window.open('http://cb.kingsoft.com/search?t=word&lang=gb2312&s='+form.query.value)>
+			  <input type="button" name="cb" value='UC' onclick=window.open('http://s.uc.cn/?q='+form.query.value)>
+			  <input type="button" value='WangPanSo' onclick=window.open('http://www.wangpansou.cn/s.php?wp=0&ty=gn&op=gn&q='+form.query.value)>
+			  <input type="button" value='Zhongsou' onclick=window.open('http://bbs.zhongsou.com/b?w='+form.query.value)>
+	</td>
+	</tr>
+	</form>
+</table>
+</div>
+
+<div class="content" id="content">
+	<select id="select">
+	  <option value="" disabled selected>Options:</option>
+	  <option value="1">UC Multiply</option>
+	  <option value="2">WangPanSou</option>
+	  <option value="3">bbs_ZhongSou</option>
+	</select>
+	<input type="text" id="txt"/>
+	<input type="button" id="btn" value="Go"/>
+</div>
+
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+	var url = new Array();
+	url[0] = "http://s.uc.cn/?q=";
+	url[1] = "http://www.wangpansou.cn/s.php?wp=0&ty=gn&op=gn&q=";
+	url[2] = "http://bbs.zhongsou.com/b?w=";
+
+	var btn=$("#btn");
+	btn.click(function(){
+					var value = $('#select option:selected').val();
+					if(value=="1"){window.open(url[0]+txt.value)}
+					else if(value=="2"){window.open(url[1]+txt.value)}
+					else if(value=="3"){window.open(url[2]+txt.value)}
+					else{};
+						}
+			);
+	
+	var id = document.getElementById("query");
+	//alert(id)
+	var val = id.value;
+	//alert(val)
+	function Enter(){
+		id.className= "black";
+		if (val="Enter here please."||val.trim()==""){
+			val=""
+		}
+	};
+	function Leave(){
+		if (val.length == 0||val.trim()==""){
+			val = "Enter here please.";
+			id.className = "gray";
+		}else{
+			id.className = "black";
+		}
+	};
+	
+</script>
+
+</body>
+</html>

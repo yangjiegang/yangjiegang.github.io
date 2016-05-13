@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>倒计时</title>
+<script type="application/javascript">
+window.onload = function(){
+	//var oYear = document.getElementsByName("year");
+	var oYear = document.getElementsByTagName("input")[0];
+	var oMonth = document.getElementsByTagName("input")[1];
+	var oDate = document.getElementsByTagName("input")[2];
+	var oBtn = document.getElementById("go");	
+	function full(str,len){
+			var str = ""+str;
+			if (str.length<len){
+					str = "0"+str;
+				}
+			return str;
+		};	
+	oBtn.onclick = function(){
+		setInterval(UpdateTime,1000);
+		UpdateTime();
+	};
+	function UpdateTime(){
+			var DateEnd = new Date();
+			var DateNow = new Date();
+			//alert(DateNow);
+			DateEnd.setFullYear(parseInt(oYear.value));
+			DateEnd.setMonth(parseInt(oMonth.value)-1);
+			DateEnd.setDate(parseInt(oDate.value));
+			DateEnd.setHours(0);
+			DateEnd.setMinutes(0);
+			DateEnd.setSeconds(0);
+			//alert(DateEnd);
+			var iRemain = (DateEnd.getTime() - DateNow.getTime())/1000;
+			if (iRemain < 0){
+					return;
+				};
+			//alert(iRemain);
+			var ReDays = parseInt(iRemain/86400);iRemain%=86400;
+			var ReHours = parseInt(iRemain/3600);iRemain%=3600;
+			var ReMinutes = parseInt(iRemain/60);iRemain%=60;
+			var ReSeconds = iRemain;
+			
+			var dayRe = document.getElementsByTagName("input")[4];
+			var houRe = document.getElementsByTagName("input")[5];
+			var minRe = document.getElementsByTagName("input")[6];
+			var secRe = document.getElementsByTagName("input")[7];
+			
+			dayRe.value=full(ReDays,3);
+			houRe.value=full(ReHours,2);
+			minRe.value=full(ReMinutes,2);
+			secRe.value=full(ReSeconds,2);	
+		};	
+};
+</script>
+</head>
+
+<body>
+<div>
+	<span><p>Destination: </p></span>
+    <input type="text" name="yearTo"/><span>year</span>
+    <input type="text" name="monthTo"/><span>month</span>
+    <input type="text" name="dateTo"/><span>date</span>
+    <p><input type="button"  id="go" value="Start"/></p>
+    <p><span>Time Remain: </span></p>
+    <input type="text" name="dayRe"/><span>days</span>
+    <input type="text" name="houRe"/><span>hours</span>
+    <input type="text" name="minRe"/><span>minutes</span>
+    <input type="text" name="secRe"/><span>seconds</span>
+</div>
+</body>
+</html>
