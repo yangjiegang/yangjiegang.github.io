@@ -1,0 +1,424 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>market</title>
+<style type="text/css">
+* {
+ margin:0;
+ padding:0;
+}
+body{height:1000px;}
+#nav {
+ width:680px;
+ height:38px;
+ background-color:#00CC99;
+ font-size:12px;
+ margin:0 0 0 25%;
+ margin-top:0;
+ position:fixed;
+ z-index:5;
+}
+#clear {
+ clear:both;
+}
+ul {
+ list-style:none;
+}
+#nav li {
+ float:left;
+}
+#nav li:hover dl {
+ display:block;
+}
+#nav li a {
+ background-color: #000;
+ color: #FFF;
+ padding:12px 20px;
+ display:block;
+ text-decoration:none;
+}
+#nav li a:hover {
+ background-color: #f60;
+}
+#nav li dl {
+ display:none; z-index:4;
+}
+#nav li dl dd a {
+ background-color:#666;
+ color: #FFF;
+}
+#nav li dl dd a:hover {
+ background-color: #fc9;
+ color:#f00;
+}
+#nav li:hover dl {
+ display:block;
+}
+
+
+.box{top:38px;width:100%;height:530px;background:url("img/market/ad_bg_02.png") center top no-repeat;overflow:hidden;
+position:relative; z-index:1;}
+.box .con{width:1080px;height:500px;margin:30px auto;}
+.box .con .left-nav{width:250px;height:500px;float:left;}
+.box .con .left-nav ul li{width:235px;height:148px;
+background:url("img/market/section-slidershow-glass.png") -17px -14px;
+margin-top:13px;list-style:none;}
+.box .con .left-nav ul li.hover{background:url("img/market/section-slidershow-glass.png") -293px -14px;}
+.box .con .left-nav ul li h3{width:235px;height:148px;}
+.box .con .right-con{width:780px;height:500px;float:right;position:relative;/*相对定位 参照物*/overflow:hidden;}
+.box .con .right-con ul{position:absolute;/*绝对定位*/ top:0px;left:0;}
+.box .con .right-con ul li{list-style:none;width:780px;height:500px;}
+.box a{display:block;width:60px;height:60px;position:absolute;/*绝对定位*/ top:50%;margin-top:-25px;}
+.box a.left{left:40px;background: url("img/market/content-bt-col.png") -2px -72px;}
+.box a.right{right:40px;background: url("img/market/content-bt-col.png") -2px 0;}
+
+.goods{width:1200PX;
+	height:400px;
+	margin:60px auto;/*上 左右 下*/
+}
+.goods .com{
+	width:280px;
+	height:320px;
+	border:1px solid #ddd;
+	float:left;/*左浮动*/
+	margin:0 8px;/*上下  左右*/
+}
+.goods .com h3{
+	text-align:center;
+	line-height:60px;
+}
+.goods .com ul li{list-style:none;
+	padding:0 15px;
+}
+.goods .com ul li:hover dl{display:block}
+.goods .com ul li:hover .title{display:none;}
+.goods .com ul li dl{display:none;}
+.goods .com ul li dl dt{
+	border:1px solid #ddd;
+	float:left;
+}
+.goods .com ul li dl dd{
+	float:left;
+	line-height:30px;
+	margin-left:10px;
+}
+.goods .com ul li p.title{line-height:35px;}
+.goods .com ul li p.title span{color:red;}
+.goods .com ul li dl dd span{color:red;}
+.goods .com ul li dl:after{
+	content:"";
+	display:block;
+	width:100%;
+	height:0;
+	clear:both;
+}
+</style>
+</head>
+
+<body>
+<div id="nav">
+ <ul>
+ <li><a href="#">首页</a></li>
+ <li><a href="#">公司介绍</a>
+ <dl>
+ <dd><a href="#">公司成员</a></dd>
+ <dd><a href="#">技术支持</a></dd>
+ <dd><a href="#">公司历史</a></dd>
+ <dd><a href="#">证书获得</a></dd>
+ <dd><a href="#">服务宗旨</a></dd>
+ </dl>
+ </li>
+ <li><a href="#">技术支持</a>
+ <dl>
+ <dd><a href="#">专业技术</a></dd>
+ <dd><a href="#">技术指导</a></dd>
+ <dd><a href="#">技术证书</a></dd>
+ <dd><a href="#">学历证明</a></dd>
+ </dl>
+ </li>
+ <li><a href="#">品牌推广</a>
+ <dl>
+ <dd><a href="#">自主品牌</a></dd>
+ <dd><a href="#">热销产品</a></dd>
+ <dd><a href="#">最新试销</a></dd>
+ <dd><a href="#">产品分类</a></dd>
+ <dd><a href="#">产品说明</a></dd>
+ <dd><a href="#">作用功效</a></dd>
+ <dd><a href="#">市场份额</a></dd>
+ </dl>
+ </li>
+ <li><a href="#">商品展示</a>
+ <dl>
+ <dd><a href="#">热卖展区</a></dd>
+ <dd><a href="#">各地展台</a></dd>
+ <dd><a href="#">功能介绍</a></dd>
+ <dd><a href="#">推荐产品</a></dd>
+ <dd><a href="#">其他功能</a></dd>
+ </dl>
+ </li>
+ <li><a href="#">成功案例</a>
+ <dl>
+ <dd><a href="#">广西案例</a></dd>
+ <dd><a href="#">上海案例</a></dd>
+ <dd><a href="#">成都案例</a></dd>
+ <dd><a href="#">新疆案例</a></dd>
+ <dd><a href="#">北京案例</a></dd>
+ </dl>
+ </li>
+ <li><a href="#">客户服务</a></li>
+ <li><a href="#">联系我们</a></li>
+ </ul>
+<!--<div id="clear"></div>-->
+</div>
+
+<div class="box">
+    <div class="con">
+        <div class="left-nav">
+            <ul>
+                <li class="hover">
+                    <h3 style="background:url('img/market/section-slidershow-glass.png') 17px -172px;"></h3>
+                </li>
+                <li>
+                    <h3 style="background:url('img/market/section-slidershow-glass.png') -220px -172px;"></h3>
+                </li>
+                <li>
+                    <h3 style="background:url('img/market/section-slidershow-glass.png') -445px -172px;"></h3>
+                </li>
+            </ul>
+        </div>
+        <div class="right-con">
+            <ul>
+                <li><img src="img/market/section_slidershow_pic_01.png" /></li>
+                <li><img src="img/market/section_slidershow_pic_02.png" /></li>
+                <li><img src="img/market/section_slidershow_pic_03.png" /></li>
+            </ul>
+        </div>
+    </div>
+    <a href="javascript:" class="left"/></a>
+    <a href="javascript:" class="right"/></a>
+</div>
+
+<div class="goods">
+    <div class="com">
+        <h3>人气品牌</h3>
+        <ul>
+            <li>
+                <p class="title" style="display:none;"><span>1</span> 雅诗兰黛</p>
+                <dl class="hover">
+                    <dt><img src="img/market/pic1.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>2</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic2.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>3</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic3.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>4</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic4.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>5</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic5.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <div class="com">
+        <h3>人气品牌</h3>
+        <ul>
+            <li>
+                <p class="title" style="display:none;"><span>1</span> 雅诗兰黛</p>
+                <dl class="hover">
+                    <dt><img src="img/market/pic1.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>2</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic2.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>3</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic3.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>4</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic4.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>5</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic5.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <div class="com">
+        <h3>人气品牌</h3>
+        <ul>
+            <li>
+                <p class="title" style="display:none;"><span>1</span> 雅诗兰黛</p>
+                <dl class="hover">
+                    <dt><img src="img/market/pic1.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>2</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic2.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>3</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic3.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>4</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic4.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>5</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic5.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <div class="com">
+        <h3>人气品牌</h3>
+        <ul>
+            <li>
+                <p class="title" style="display:none;"><span>1</span> 雅诗兰黛</p>
+                <dl class="hover">
+                    <dt><img src="img/market/pic1.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>2</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic2.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>3</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic3.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>4</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic4.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+            <li>
+                <p class="title"><span>5</span> 雅诗兰黛</p>
+                <dl>
+                    <dt><img src="img/market/pic5.jpg" width="100" /></dt>
+                    <dd>雅诗兰黛</dd>
+                    <dd>产品数：<span>657</span></dd>
+                    <dd>关注数：<span>78656546</span></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+        
+<script src="js/jquery.js"></script>
+<script>
+	var rtul=$(".right-con").find("ul");
+	function Move(sq){
+		rtul.animate({top:-500*sq},3000);
+	}
+	t = setInterval(function(){
+						for(var i=1;i<=3;i++){
+							if(i==3){
+								for(var j=2;j>=0;j--){
+									Move(j);
+								}	
+							}else{
+								Move(i);
+							}
+						}
+					},3000)
+</script>
+</body>
+</html>
