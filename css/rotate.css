@@ -1,0 +1,9 @@
+#div0{width:90%;height:360px; position:relative; transform-style:preserve-3d;transition:3s;transform-origin:center center -180px; float:left; margin:-65% 4% auto; z-index:2;}
+#div0 div{width:100%;height:100%;position:absolute; outline:1px solid transparent;}
+#div1{left:0;top:0;background:url("../img/3D_rotate/1.jpg"); background-size:100% 100%; z-index:2;}
+#div2{left:0;top:-100%;background:url("../img/3D_rotate/2.jpg");  background-size:100% 100%; transform:rotateX(100deg);transform-origin:bottom; z-index:3;}
+#div3{left:0;top:0;background:url("../img/3D_rotate/3.jpg");  background-size:100% 100%; transform:translateZ(-360px); z-index:3;}
+#div4{left:0;top:100%;background:url("../img/3D_rotate/4.jpg");  background-size:100% 100%; transform:rotateX(-90deg);transform-origin:top; z-index:3;}
+a{display:block;width:60px;height:60px;position:fixed; top:30%;margin-top:-25px;z-index:4;}
+a.left{left:5%;background: url("../img/3D_rotate/content-bt-col.png") -2px -72px;}
+a.right{right:6%;background: url("../img/3D_rotate/content-bt-col.png") -2px 0;}

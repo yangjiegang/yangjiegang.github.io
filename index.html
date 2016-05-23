@@ -1,76 +1,93 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="keywords" content="" />
 <title>翻滚吧导航页</title>
-<style type="text/css">
-#div0{width:100%;height:360px; margin:0px auto; position:relative; transform-style:preserve-3d;transition:3s;transform-origin:center center -180px;float:left;}
-#div0 div{width:100%;height:100%;position:absolute; outline:1px solid transparent;}
-#div1{left:0;top:0;background:url("img/3D_rotate/1.jpg"); background-size:100% 100%; z-index:1;}
-#div2{left:0;top:-100%;background:url("img/3D_rotate/2.jpg");  background-size:100% 100%; transform:rotateX(90deg);transform-origin:bottom; z-index:1;}
-#div3{left:0;top:0;background:url("img/3D_rotate/3.jpg");  background-size:100% 100%; transform:translateZ(-360px); z-index:1;}
-#div4{left:0;top:100%;background:url("img/3D_rotate/4.jpg");  background-size:100% 100%; transform:rotateX(-90deg);transform-origin:top; z-index:1;}
-/*#div0:hover{transform:rotateX(360deg);}*/
-a{display:block;width:60px;height:60px;position:fixed;/*绝对定位*/ top:30%;margin-top:-25px;z-index:3;}
-a.left{left:40px;background: url("img/3D_rotate/content-bt-col.png") -2px -72px;}
-a.right{right:40px;background: url("img/3D_rotate/content-bt-col.png") -2px 0;}
-#div5{width:100%; height:800px; margin-top:365px; position:absolute; background:url("img/3D_rotate/mag1.jpg");}
-</style>
+<link href="css/FlowStar.css" rel="stylesheet" type="text/css" />
+<link href="css/countdown.css" rel="stylesheet" type="text/css" />
+<link href="css/rotate.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/FlowStar.js"></script>
+<script type="text/javascript" src="js/jquery.downCount.js"></script>
 </head>
 
 <body>
-    <a href="javascript:" class="left"/></a>
-    <a href="javascript:" class="right"/></a>
-    <div id="div0">
-        <div id="div1"  onclick="window.open('main.html')">
-        </div>
-        <div id="div2"  onclick="window.open('market.html')">
-        </div>
-        <div id="div3"  onclick="window.open('main.html')">
-        </div>
-        <div id="div4"  onclick="window.open('market.html')">
-        </div>
-    </div
-	<br/>
-	<div id="div5"></div>
-<script src="js/jquery.js"></script>
-<script>
+<!--效果html开始-->
+<div class="div"></div>
+<!--效果html结束-->
+
+<h1>点击左右翻页按钮可以让轮播图翻转！点击以上轮播图可以跳转到相应页面！</h1>
+<ul class="countdown">
+  <li> <span class="days">00</span>
+    <p class="days_ref">days</p>
+  </li>
+  <li class="seperator">.</li>
+  <li> <span class="hours">00</span>
+    <p class="hours_ref">hours</p>
+  </li>
+  <li class="seperator">:</li>
+  <li> <span class="minutes">00</span>
+    <p class="minutes_ref">minutes</p>
+  </li>
+  <li class="seperator">:</li>
+  <li> <span class="seconds">00</span>
+    <p class="seconds_ref">seconds</p>
+  </li>
+</ul>
+
+<a href="javascript:" class="left"/></a>
+<a href="javascript:" class="right"/></a>
+<div id="div0">
+	<div id="div1"  onclick="window.open('main.html')">
+	</div>
+	<div id="div2"  onclick="window.open('market.html')">
+	</div>
+	<div id="div3"  onclick="window.open('main.html')">
+	</div>
+	<div id="div4"  onclick="window.open('market.html')">
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('.countdown').downCount({
+		date: '12/24/2016 12:00:00',
+		offset: +10
+	}, function () {
+		alert('倒计时结束!');
+	});
+	
 	var btnLeft = $("a.left");
 	var btnRight = $("a.right");
 	var div0 = $("#div0");
-	var div5 = $("#div5");
 	var i=1;
 	var j=1;
 	var k=1;
-	
 	btnLeft.click(function(){
 		var deg = -i*90;
 		Rotate(deg);
 		i++;
 		j=1;
-		console.log(i,deg);
 	});
 	btnRight.click(function(){
 		var deg = j*90;
 		Rotate(deg);
 		j++;
 		i=1;
-		console.log(j,deg);
 	});
 	function Rotate(arg){
 		div0.css("transform","rotateX("+arg+"deg)");
-	}
+	};
 	
-	function Mag(arg){
-		div5.css("background","url(img/3D_rotate/mag"+arg+".jpg)");
-	}
-	t = setInterval(function(){
-		Mag(k);
-		k++;
-		if(k>4){
-			k=1;
+	var h = $("h1");
+	function opacity(){
+		if(h.css("opacity")==0.5){
+			h.css("opacity",0);
+		}else{
+			h.css("opacity",0.5);
 		}
-	},3000);
+	}
+	setInterval(opacity,2000);
 </script>
 </body>
 </html>
