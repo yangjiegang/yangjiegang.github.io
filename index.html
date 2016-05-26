@@ -17,38 +17,40 @@
 <div class="div"></div>
 <!--效果html结束-->
 
-<h1>点击左右翻页按钮可以让轮播图翻转！点击以上轮播图可以跳转到相应页面！</h1>
-<ul class="countdown">
-  <li> <span class="days">00</span>
-    <p class="days_ref">days</p>
-  </li>
-  <li class="seperator">.</li>
-  <li> <span class="hours">00</span>
-    <p class="hours_ref">hours</p>
-  </li>
-  <li class="seperator">:</li>
-  <li> <span class="minutes">00</span>
-    <p class="minutes_ref">minutes</p>
-  </li>
-  <li class="seperator">:</li>
-  <li> <span class="seconds">00</span>
-    <p class="seconds_ref">seconds</p>
-  </li>
-</ul>
-
-<a href="javascript:" class="left"/></a>
-<a href="javascript:" class="right"/></a>
-<div id="div0">
-	<div id="div1"  onclick="window.open('main.html')">
-	</div>
-	<div id="div2"  onclick="window.open('market.html')">
-	</div>
-	<div id="div3"  onclick="window.open('main.html')">
-	</div>
-	<div id="div4"  onclick="window.open('market.html')">
+<div class="box">
+	<a href="javascript:" class="left"/></a>
+	<a href="javascript:" class="right"/></a>
+	<div id="div0">
+		<div id="div1"  onclick="window.open('main.html')">
+		</div>
+		<div id="div2"  onclick="window.open('market.html')">
+		</div>
+		<div id="div3"  onclick="window.open('main.html')">
+		</div>
+		<div id="div4"  onclick="window.open('market.html')">
+		</div>
 	</div>
 </div>
-
+<div class="time">
+	<h1>点击左右翻页按钮可以让轮播图翻转！点击以上轮播图可以跳转到相应页面！</h1>
+	<ul class="countdown">
+	  <li> <span class="days">00</span>
+		<p class="days_ref">days</p>
+	  </li>
+	  <li class="seperator">.</li>
+	  <li> <span class="hours">00</span>
+		<p class="hours_ref">hours</p>
+	  </li>
+	  <li class="seperator">:</li>
+	  <li> <span class="minutes">00</span>
+		<p class="minutes_ref">minutes</p>
+	  </li>
+	  <li class="seperator">:</li>
+	  <li> <span class="seconds">00</span>
+		<p class="seconds_ref">seconds</p>
+	  </li>
+	</ul>
+</div>
 <script type="text/javascript">
 	$('.countdown').downCount({
 		date: '12/24/2016 12:00:00',

@@ -1,12 +1,15 @@
+.time{
+position:relative; margin:60% auto; width:100%; height:40%;
+}
 h1{
-	margin:-15% auto;
+	margin:0 0 0 7%;
 	text-align:center;
 	opacity:0.5;
 }
 ul.countdown {
 	list-style: none;
-	margin: 17% 0;
-	padding: 0;
+	margin: 5% 0 0 25%;
+	position:absolute;
 	display: block;
 	text-align: center;
 	z-index:2;

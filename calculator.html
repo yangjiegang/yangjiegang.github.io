@@ -5,9 +5,10 @@
 <title>简易计算器</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 <style>
-.content{margin:10px auto;width:172px;height:185px;padding:5px;border:solid 2px black;}
+.content{margin:10px auto;width:175px;height:185px;padding:5px;border:solid 3px #908a8a; border-radius:5px; border-shadow:2px;}
 button{width:40px;}
 .input-group{width:157px;}
+#basic-addon2{cursor:pointer;}
 </style>
 </head>
 
@@ -60,15 +61,13 @@ button{width:40px;}
 	var opt=true;
 	var dot=$("#dot");
 	var clr=$("#clr");
-	var mark = $(".btn-info");
-	
+	var mark = $(".btn-info");	
 	input.val("0");
 	btn.bind("click",function(){
 		var num=$(this).text();
 		ret+=num;
 		input.val(ret);
-	});
-	
+	});	
 	dot.bind("click",function(){
 		if(opt){
 			var num=$(this).text();
@@ -79,7 +78,6 @@ button{width:40px;}
 			return;
 		}	
 	});
-
 	mark.bind("click",function(){
 		var txt =""+input.val();
 		var arr=txt.split(''); 
@@ -98,11 +96,12 @@ button{width:40px;}
 
 	});
 	equal.bind("click",function(){
-		var end=eval(ret);
+		var end = ""+eval(ret);
 		var show = input.val(end);
-		//var dot=".";
-		//opt = dot.index(end)==-1?true:false;
-		//opt = end.indexOf(dot) == -1 ? true:false;
+		ret = "";
+		var doter =".";
+		//console.log(typeof(end));
+		opt = end.indexOf(doter) == -1 ? true:false;
 	});
 	clr.bind("click",function(){
 		input.val("0");	
