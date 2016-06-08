@@ -32,25 +32,18 @@
 		var divB = $(".big_pic");
 		var oMark = $(".mark");
 		var oFloat = $(".float_layer");
-		//var imgS = $("#s");
-		//var imgB = $("#b");
 		var imgB = divB.find("img");
 
 		$(function(){
 			oMark.mousemove(function(){
 					oFloat.css({display:"block",});
 					divB.css({display:"block",});
-					//float.removeClass("hide");
-					//imgB.removeClass("hide");
 			});
 			oMark.mouseleave(function(){
 					oFloat.css({display:"none",});
 					divB.css({display:"none",});
-					//float.addClass("hide");
-					//imgB.addClass("hide");
 			});
 			oMark.mousemove(function(e){
-				//var oEvent = ev||event;
 				var l=e.pageX-main.offset().left-divS.offset().left-(oFloat.width()/2);
 				var t=e.pageY-main.offset().top-divS.offset().top-(oFloat.height()/2);
 				document.title = l + "|" + t;
